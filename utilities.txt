@@ -1,0 +1,179 @@
+MONGO
+----------------------------------
+use myapp
+
+db.auth('mongo_user','admin123')
+
+show collections
+
+db.mocks.find()
+
+
+
+
+MQTT
+----------------------------------
+
+MQTT_PUB
+
+mqtt_pub -h 'mqtt.devmania.com.br' -p 443 -t '/bom/realtime/message/1/' -m '{"gru" : "grobal"}'
+
+
+MQTT_SUB
+
+mqtt_sub -h 'mqtt.devmania.com.br' -p 443 -t '/bom/realtime/message/#' -vv /bom/realtime/message/1/ {"gru" : "grobal"}
+
+
+
+DOCKER
+----------------------------------
+
+docker image prune
+
+docker container prune
+
+docker volume prune
+
+
+
+
+
+
+DOCKER-COMPOSE
+----------------------------------
+
+docker-compose stop && docker-compose rm -f && docker-compose up --build -d && docker-compose logs -f
+
+docker-compose stop && docker-compose rm -f && docker-compose up --build -d && docker-compose logs -f bom
+
+docker-compose logs -f jsstore
+
+docker-compose logs -f bom
+
+
+
+
+REDIS
+----------------------------------
+
+docker exec docker_redis_1 redis-cli monitor
+
+
+
+ELASTICSEARCH
+----------------------------------
+
+GET _search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+GET /_cat/indices
+DELETE /index-test
+DELETE /new-index
+DELETE /1234567890
+GET developer.production.pt-br.products/_search
+{
+  "query": {
+    "match": {
+      "slug": "Bemacash"
+    }
+  }
+}
+GET developer.production.pt-br.products/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+
+
+
+NC
+----------------------------------
+
+Subir host em um porta
+nc -lkvv 3333
+
+conectar
+nc localhost 8888 -vv
+
+nc -lkvv 3333 > arquivo-qualquer.zip
+
+ENVIAR ARQUIVO
+cat postgresql-42.2.2.jar > /dev/tcp/will/3333
+
+
+
+NMAP
+----------------------------------
+
+sudo netstat -antop | grep 8888
+
+
+
+
+
+SSH
+----------------------------------
+
+ssh -R 8080:localhost:3002 xxxxxxxxxxxxxxx.com.br
+
+ssh tditotvs@meerkat
+
+ssh root@dev-beehive.devmania.com.br
+
+ssh root@dev-beehive.devmania.com.br docker logs -f dev_core-beehive_1 --tail 100
+
+ssh root@dev-beehive.devmania.com.br
+ssh -L 8081:172.26.0.5:5432 -N root@dev-beehive.devmania.com.br
+
+
+
+SEQUELIZE - SEED
+----------------------------------
+
+sequelize db:seed:undo:all && sequelize db:seed:all
+
+
+
+
+
+POSTGRESQL
+----------------------------------
+
+CREATE ROLE hercules WITH LOGIN PASSWORD '123456';
+
+ALTER ROLE hercules CREATEDB;
+
+
+
+
+
+OTHERS
+----------------------------------
+
+docker exec -it 068dbfde1cff redis-cli monitor
+
+hercules@hercules-fluig ~/store_repo/jsstore $ NODE_PATH=$(pwd)/src node_modules/mocha/./bin/mocha test test/meerkat/meerkat.backoffice.modality.test.js
+
+openssl x509 -inform DER -in idexo.customerfi.com.crt -out outcert.pem -text
+
+
+
+GIT
+----------------------------------
+
+git clone --recursive git@github.com:totvs-store/store_stack.git
+
+git pull
+
+git submodule foreach git pull origin developer
+
+git add .
+
+git commit
+
+git push
