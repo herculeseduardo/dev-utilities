@@ -1,0 +1,20 @@
+{
+  "name": "dev-utilities",
+  "version": "1.0.0",
+  "description": "dev utilities",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herculeseduardo/dev-utilities.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/herculeseduardo/dev-utilities/issues"
+  },
+  "homepage": "https://github.com/herculeseduardo/dev-utilities#readme"
+}

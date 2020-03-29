@@ -1,2 +1,3 @@
 # dev-utilities
-dev utilities
+
+npm start
